@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';">
+    <title>GudangKu</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/328b2b4f87.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap 5 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+
+    <link href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS Collection -->
+    <link rel="stylesheet" href="../../../assets/css/global.css"/>
+
+    <!-- Jquery -->
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <!-- Jquery DataTables -->
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+    <!-- Bootstrap dataTables Javascript -->
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+  </head>
+  <body>
+    <div class="p-5 d-block mx-auto" style="max-width:720px !important;">
+      <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12">
+              <button class="btn-feature" onclick="location.href='/inventory';">
+                  <i class="fa-solid fa-warehouse" style="font-size:100px;"></i>
+                  <h2 class="mt-3" style="font-size:var(--textJumbo);">My Inventory</h2>
+              </button>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+              <button class="btn-feature" onclick="location.href='/stats';">
+                  <i class="fa-solid fa-pie-chart" style="font-size:100px;"></i>
+                  <h2 class="mt-3" style="font-size:var(--textJumbo);">Stats</h2>
+              </button>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+              <button class="btn-feature" onclick="location.href='/calendar';">
+                  <i class="fa-solid fa-calendar" style="font-size:100px;"></i>
+                  <h2 class="mt-3" style="font-size:var(--textJumbo);">Calendar</h2>
+              </button>
+          </div>
+      </div> 
+      <div class="row mt-4">
+          <div class="col-lg-4 col-md-6 col-sm-12">
+              <button class="btn-feature">
+                  <i class="fa-solid fa-scroll" style="font-size:100px;"></i>
+                  <h2 class="mt-3" style="font-size:var(--textJumbo);">Report</h2>
+              </button>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+              <button class="btn-feature" onclick="location.href='/history';">
+                  <i class="fa-solid fa-solid fa-clock-rotate-left" style="font-size:100px;"></i>
+                  <h2 class="mt-3" style="font-size:var(--textJumbo);">History</h2>
+              </button>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+              <button class="btn-feature" onclick="location.href='/profile';">
+                  <i class="fa-solid fa-solid fa-user" style="font-size:100px;"></i>
+                  <h2 class="mt-3" style="font-size:var(--textJumbo);">My Profile</h2>
+              </button>
+          </div>
+      </div> 
+    </div>
+  </body>
+</html>

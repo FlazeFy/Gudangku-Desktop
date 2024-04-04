@@ -11,5 +11,15 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^29.1.6"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "axios": "^1.6.8",
+    "bootstrap": "^5.3.3",
+    "font-awesome": "^4.7.0",
+    "mysql2": "^3.9.3",
+    "promise-mysql": "^5.2.0"
   }
 }
