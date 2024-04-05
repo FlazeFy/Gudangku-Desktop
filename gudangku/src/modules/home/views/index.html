@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';">
+    <title>GudangKu</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/328b2b4f87.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap 5 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+
+    <link href="../../../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS Collection -->
+    <link rel="stylesheet" href="../../../../assets/css/global.css"/>
+
+    <!-- Jquery -->
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <!-- Jquery DataTables -->
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+    <!-- Bootstrap dataTables Javascript -->
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+  </head>
+  <body>
+    <div class="p-5 d-block mx-auto" style="max-width:720px !important;">
+      <h2 class="text-white fw-bold mb-4" style="font-size:36px;">My Inventory</h2>
+      <a class="btn btn-danger mb-3 me-2" href="/"><i class="fa-solid fa-arrow-left" style="font-size:var(--textXLG);"></i> Back</a>
+
+      <table class="table" id="inventory_tb">
+        <thead>
+          <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Category</th>
+              <th scope="col">Description</th>
+              <th scope="col">Merk</th>
+              <th scope="col">Room</th>
+              <th scope="col">Storage / Rack</th>
+              <th scope="col">Price</th>
+              <th scope="col">Unit</th>
+              <th scope="col">Capacity</th>
+              <th scope="col">Info</th>
+              <th scope="col">Favorite</th>
+              <th scope="col">Reminder</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+          </tr>
+        </thead>
+      <tbody id="inventory_tb_body">
+      </tbody>
+    </div>
+
+    <script defer src="../../../modules/home/services/index.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        getHomePageService()
+      });
+    </script>
+  </body>
+</html>
