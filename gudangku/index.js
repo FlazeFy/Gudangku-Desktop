@@ -42,7 +42,7 @@ function createWindow(page) {
 }
 
 app.whenReady().then(() => {
-    createWindow('history')
+    createWindow('calendar')
     mainWindow.maximize()
 
     app.on("activate", function () {
