@@ -56,6 +56,18 @@ body {
     background: var(--darkColor);
 }
 
+table th, table td {
+    background: transparent !important;
+    color: var(--whiteColor) !important;
+}
+
+.history-box {
+    padding: var(--spaceXMD);
+    margin-bottom: var(--spaceXMD);
+    border-radius: var(--roundedMD);
+    border: 1.5px solid var(--primaryColor);
+}
+
 input, button, .btn, textarea, select{
     padding: var(--spaceMD) !important;
     background: transparent !important;

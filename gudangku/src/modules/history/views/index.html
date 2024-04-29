@@ -40,37 +40,16 @@
   </head>
   <body>
     <div class="p-5 d-block mx-auto" style="max-width:720px !important;">
-      <h2 class="text-white fw-bold mb-4" style="font-size:36px;">My Inventory</h2>
+      <h2 class="text-white fw-bold mb-4" style="font-size:36px;">History</h2>
       <a class="btn btn-danger mb-3 me-2" href="/"><i class="fa-solid fa-arrow-left" style="font-size:var(--textXLG);"></i> Back</a>
 
-      <table class="table" id="inventory_tb">
-        <thead>
-          <tr>
-              <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Category</th>
-              <th scope="col">Description</th>
-              <th scope="col">Merk</th>
-              <th scope="col">Room</th>
-              <th scope="col">Storage / Rack</th>
-              <th scope="col">Price</th>
-              <th scope="col">Unit</th>
-              <th scope="col">Capacity</th>
-              <th scope="col">Info</th>
-              <th scope="col">Favorite</th>
-              <th scope="col">Reminder</th>
-              <th scope="col">Edit</th>
-              <th scope="col">Delete</th>
-          </tr>
-        </thead>
-      <tbody id="inventory_tb_body">
-      </tbody>
+      <div id="history_holder"></div>
     </div>
 
-    <script defer src="../../../modules/home/services/index.js"></script>
+    <script defer src="../../../modules/history/services/index.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        getHomePageService()
+        getHistoryPageService()
       });
     </script>
   </body>

@@ -3,14 +3,14 @@ const { contextBridge, ipcRenderer, dialog } = require('electron')
 let homeBridge = {
     getAllInventoryRender: async() => {
         const res = await ipcRenderer.invoke("getAllInventory")
-        let holder = document.getElementById("inventory_tb_body")
-        
-        let dt = JSON.parse(res)
+        let dt = JSON.parse(res).data
 
+        let holder = document.getElementById("inventory_tb_body")
+        let i = 1
         dt.forEach(el => {
-            holder.append += `
+            const elmt = `
                 <tr ${el.deleted_at !== null ? 'style="background:rgba(221, 0, 33, 0.15);"' : ''}>
-                    <th scope="row">${el.id}</th>
+                    <th scope="row">${i}</th>
                     <td>
                         ${el.is_favorite ? `<i class="fa-solid fa-bookmark" style="color:var(--primaryColor);" title="Favorite"></i>` : ''}
                         ${el.inventory_name}
@@ -23,7 +23,7 @@ let homeBridge = {
                         ${el.inventory_storage !== null ? el.inventory_storage : '-'} / 
                         ${el.inventory_rack !== null ? el.inventory_rack : '-'}
                     </td>
-                    <td>Rp. ${numberFormat(el.inventory_price, 0, ',', '.')}</td>
+                    <td>Rp. ${el.inventory_price}</td>
                     <td>${el.inventory_vol} ${el.inventory_unit}</td>
                     <td>
                         ${el.inventory_capacity_unit === 'percentage' ? `${el.inventory_capacity_vol}%` : '-'}
@@ -60,6 +60,9 @@ let homeBridge = {
                     </td>
                 </tr>
             `
+
+            holder.insertAdjacentHTML("beforeend",elmt)
+            i++
         })
     }
 }

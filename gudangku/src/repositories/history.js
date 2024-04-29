@@ -1,11 +1,11 @@
 const axios = require("axios")
 const { dialog, ipcMain } = require("electron")
 
-ipcMain.handle("getAllInventory", async () => {
+ipcMain.handle("getAllHistory", async () => {
     try {
         const bearerToken = '33|0DWfzepjZqA1Utxi3X9KQ40vcmKmZdJIatAJtmnq8d0f169f'
         
-        const response = await axios.get("http://127.0.0.1:8000/api/v1/inventory", {
+        const response = await axios.get("http://127.0.0.1:8000/api/v1/history", {
             headers: {
                 Authorization: `Bearer ${bearerToken}`,
                 Accept: 'application/json',
