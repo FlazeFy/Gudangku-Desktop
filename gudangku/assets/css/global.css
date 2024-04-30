@@ -149,3 +149,12 @@ hr {
     color: var(--whiteColor) !important;
     font-size: var(--textXMD) !important;
 }
+
+.report-box {
+    border: 2px solid var(--primaryColor);
+    padding: var(--spaceLG) !important;
+    border-radius: var(--roundedLG);
+    width: 100%;
+    text-align: start;
+    margin-bottom: var(--spaceLG);
+}
