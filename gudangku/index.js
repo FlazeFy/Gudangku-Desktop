@@ -2,7 +2,7 @@ const { app, BrowserWindow, screen } = require("electron");
 const path = require("path");
 const axios = require("axios");
 const { dialog } = require("electron");
-const ipcMain = require("./src/repositories/report");
+const ipcMain = require("./src/repositories/profile");
 
 var mainWindow;
 function createWindow(page) {
@@ -42,7 +42,7 @@ function createWindow(page) {
 }
 
 app.whenReady().then(() => {
-    createWindow('report')
+    createWindow('profile')
     mainWindow.maximize()
 
     app.on("activate", function () {
