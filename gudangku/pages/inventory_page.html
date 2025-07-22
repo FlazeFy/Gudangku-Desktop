@@ -5,6 +5,7 @@
     <title>GudangKu Admin</title>
     <link rel="stylesheet" href="../src/style/main.css" />
     <script type="module" src="../src/components/inventory/inventory_list_component.js"></script>
+    <script type="module" src="../src/components/common/navigation_component.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
@@ -28,14 +29,5 @@
     <div class="main-content">
         Welcome to GudangKu Admin
     </div>
-
-    <script>
-        document.getElementById('btn-user-page').addEventListener('click', () => {
-            window.electronAPI.navigateTo('user_page.html')
-        })
-        document.getElementById('btn-inventory-page').addEventListener('click', () => {
-            window.electronAPI.navigateTo('inventory_page.html')
-        })
-    </script>
 </body>
 </html>
