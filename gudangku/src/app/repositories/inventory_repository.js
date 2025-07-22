@@ -1,6 +1,6 @@
 import { API_BASE_URL } from '../../const/config.js'
 
-export async function apiGetAllUser(path) {
+export async function apiGetAllInventory(path) {
     const token = localStorage.getItem('token')
 
     const res = await fetch(`${API_BASE_URL}${path}`, {
@@ -15,6 +15,6 @@ export async function apiGetAllUser(path) {
     return res.json()
 }
 
-export async function fetchUser(page = 1) {
-    return await apiGetAllUser(`/user?page=${page}&per_page_key=36`)
+export async function fetchInventory(page = 1) {
+    return await apiGetAllInventory(`/inventory?page=${page}&per_page_key=36`)
 }
