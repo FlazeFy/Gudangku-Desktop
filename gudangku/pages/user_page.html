@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>GudangKu Admin</title>
+    <link rel="stylesheet" href="../src/style/main.css" />
+    <script type="module" src="../src/components/user/user_list_component.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <i class="fas fa-home sidebar-icon" title="Dashboard"></i>
+        <i class="fas fa-box sidebar-icon" title="Inventory"></i>
+        <i class="fas fa-chart-bar sidebar-icon" title="Statistics"></i>
+        <i class="fas fa-user sidebar-icon" title="Users"></i>
+        <i class="fas fa-file sidebar-icon" title="Report"></i>
+        <i class="fas fa-sign-out-alt sidebar-icon" title="Logout"></i>
+    </div>
+    
+    <div class="explorer">
+        <h2>Users</h2>
+        <div class="folder"><i class="fas fa-folder-open"></i> All User</div>
+        <div id="userList"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        Welcome to GudangKu Admin
+    </div>
+</body>
+</html>

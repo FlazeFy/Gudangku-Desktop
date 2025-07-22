@@ -20,7 +20,7 @@ export function setupLoginForm() {
             }
 
             localStorage.setItem('token', res.token)
-            window.electronAPI.navigateTo('home_page.html')
+            window.electronAPI.navigateTo('user_page.html')
         } catch (err) {
             if (err instanceof Response && [400, 404, 500].includes(err.status)) {
                 try {

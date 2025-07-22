@@ -1,9 +1,17 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: system-ui, sans-serif;
-    margin: 2rem;
-    background-color: #212121;
     color: #faf7ff;
-    padding: 20px 40px;
+    display: flex;
+    height: 100vh;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #1e1e1e;
+    color: #ccc;
 }
 
 .container {
@@ -76,4 +84,79 @@ input, select {
 
 .bg-danger {
     background: #ff83b1;
+}
+
+.sidebar {
+    width: 60px;
+    background-color: #252526;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    border-right: 1px solid #3c3c3c;
+}
+
+.sidebar-icon {
+    font-size: 20px;
+    margin: 20px 0;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.sidebar-icon:hover {
+    color: #fff;
+}
+
+.explorer {
+    width: 300px;
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-right: 1px solid #3c3c3c;
+    overflow-y: auto;
+}
+
+.explorer h2 {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.folder, .file {
+    padding-left: 10px;
+    margin: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.folder i, .file i {
+    width: 16px;
+}
+
+.folder {
+    font-weight: 500;
+    color: #f4f4f4;
+    margin-bottom: 8px;
+    padding: 6px 6px;
+}
+.folder:hover {
+    background: rgb(69, 69, 69);
+}
+
+.tree {
+    margin-left: 14px;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
 }
