@@ -2,7 +2,6 @@ import { loadDashboardByUserId } from '../../app/services/stats_service.js'
 
 export async function renderDashboardByUser(userId) {
     let holder = document.querySelector('#main-content')
-    holder.innerHTML = ''
 
     try {
         const res = await loadDashboardByUserId(userId)
