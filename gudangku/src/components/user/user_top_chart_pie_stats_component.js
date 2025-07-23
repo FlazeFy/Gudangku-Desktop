@@ -16,7 +16,7 @@ export async function renderTopChartPieStats(userId) {
 
         try {
             const res = await loadTopChartPieStatsIdByUserId(userId, el.context)
-            const data = res.data
+            const data = res.data.data
 
             const labels = data.map(item => item.context)
             const series = data.map(item => item.total)

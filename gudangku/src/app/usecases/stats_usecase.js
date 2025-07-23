@@ -5,3 +5,7 @@ export async function getDashboardByUserId(api, userId) {
 export async function getTopChartPieStatsIdByUserId(api, userId, context) {
     return await api.fetchTopChartPieStatsIdByUserId(userId, context)
 }
+
+export async function getMonthlyInventoryBarStatsByUserId(api, userId, year) {
+    return await api.fetchMonthlyInventoryBarStatsByUserId(userId, year)
+}
