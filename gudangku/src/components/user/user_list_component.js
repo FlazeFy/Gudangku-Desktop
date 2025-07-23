@@ -1,8 +1,7 @@
 import { loadUser } from '../../app/services/user_service.js'
+import { renderDashboardByUser } from './user_dashboard_stats_component.js'
 
-let currentPage = 1
-
-async function render(page = 1) {
+export async function render(page = 1, module) {
     let holder = document.querySelector('#userList')
     holder.innerHTML = ''
 
@@ -13,14 +12,22 @@ async function render(page = 1) {
         data.forEach(dt => {
             holder.innerHTML += `
                 <div class="tree">
-                    <div class="folder"><i class="fas fa-user"></i> @${dt.username}</div>
+                    <button class="folder" data-user_id="${dt.id}"><i class="fas fa-user"></i> @${dt.username}</button>
                     <div class="tree"></div>
                 </div>
             `
+        })
+
+        document.querySelectorAll('.folder').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const userId = btn.dataset.user_id
+                
+                if(module == 'stats'){
+                    renderDashboardByUser(userId)
+                }
+            })
         })
     } catch (err) {
         holder.innerHTML = `<p>${err}</p>`
     }
 }
-
-render(currentPage)

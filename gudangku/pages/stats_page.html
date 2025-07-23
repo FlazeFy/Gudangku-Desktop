@@ -21,7 +21,7 @@
     </div>
     
     <div class="explorer">
-        <h2>Users</h2>
+        <h2>Stats</h2>
         <div class="folder"><i class="fas fa-folder-open"></i> All User</div>
         <div id="userList"></div>
     </div>
@@ -32,10 +32,8 @@
     </div>
 
     <script type="module">
-        let currentPage = 1
-
         import { render } from '../src/components/user/user_list_component.js'
-        render(currentPage, 'user')
+        render(null, 'stats')
     </script>
 </body>
 </html>

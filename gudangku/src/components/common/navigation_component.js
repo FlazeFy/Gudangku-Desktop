@@ -10,3 +10,6 @@ document.getElementById('btn-report-page').addEventListener('click', () => {
 document.getElementById('btn-history-page').addEventListener('click', () => {
     window.electronAPI.navigateTo('history_page.html')
 })
+document.getElementById('btn-stats-page').addEventListener('click', () => {
+    window.electronAPI.navigateTo('stats_page.html')
+})
