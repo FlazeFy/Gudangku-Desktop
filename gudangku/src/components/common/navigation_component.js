@@ -7,3 +7,6 @@ document.getElementById('btn-inventory-page').addEventListener('click', () => {
 document.getElementById('btn-report-page').addEventListener('click', () => {
     window.electronAPI.navigateTo('report_page.html')
 })
+document.getElementById('btn-history-page').addEventListener('click', () => {
+    window.electronAPI.navigateTo('history_page.html')
+})

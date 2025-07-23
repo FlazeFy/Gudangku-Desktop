@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>GudangKu Admin</title>
     <link rel="stylesheet" href="../src/style/main.css" />
-    <script type="module" src="../src/components/report/report_list_component.js"></script>
+    <script type="module" src="../src/components/history/history_table_component.js"></script>
     <script type="module" src="../src/components/common/navigation_component.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
@@ -19,16 +19,21 @@
         <a id="btn-history-page"><i class="fas fa-rotate-left sidebar-icon" title="History"></i></a>
         <a id="btn-logout-page"><i class="fas fa-sign-out-alt sidebar-icon" title="Logout"></i></a>
     </div>
-    
-    <div class="explorer">
-        <h2>Report</h2>
-        <div class="folder"><i class="fas fa-folder-open"></i> All Report</div>
-        <div id="reportList"></div>
-    </div>
 
     <!-- Main Content -->
     <div class="main-content">
-        Welcome to GudangKu Admin
+        <table id="historyTable">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Type</th>
+                    <th>Context</th>
+                    <th>Created At</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div id="pagination"></div>
     </div>
 </body>
 </html>
