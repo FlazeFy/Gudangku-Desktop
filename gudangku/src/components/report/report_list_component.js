@@ -13,7 +13,15 @@ async function render(page = 1) {
         data.forEach(dt => {
             holder.innerHTML += `
                 <div class="tree">
-                    <div class="folder"><i class="fas fa-file"></i> ${dt.report_title}</div>
+                    <div class="folder">
+                        <div>
+                            <i class="fas fa-file"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-weight:600; margin-bottom:0;">${dt.report_title}</h4>
+                            <p>by @${dt.username}</p>
+                        </div>
+                    </div>
                     <div class="tree"></div>
                 </div>
             `

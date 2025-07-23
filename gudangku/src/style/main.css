@@ -23,6 +23,10 @@ body {
 h1 {
     margin-bottom: 1rem;
 }
+label {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
   
 button {
     background-color: #8685ef;
@@ -76,6 +80,14 @@ input, select {
     border-radius: 20px;
     background: #414141;
     color: #faf7ff;
+    margin-bottom: 10px;
+}
+
+.divider {
+    background: #faf7ff;
+    height: 2px;
+    margin: 12px 0;
+    width: 100%;
 }
 
 .bg-success {
@@ -141,6 +153,9 @@ input, select {
     color: #f4f4f4;
     margin-bottom: 8px;
     padding: 6px 6px;
+    width: 100%;
+    background: transparent;
+    text-align: start;
 }
 .folder:hover {
     background: rgb(69, 69, 69);
@@ -150,7 +165,7 @@ input, select {
     margin-left: 14px;
 }
 
-.main-content {
+#main-content {
     flex: 1;
     padding: 20px;
     background-color: #1e1e1e;
@@ -159,4 +174,8 @@ input, select {
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
+}
+
+.img {
+    max-width: 15vw;
 }
