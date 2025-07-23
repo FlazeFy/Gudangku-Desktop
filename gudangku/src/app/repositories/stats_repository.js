@@ -31,3 +31,7 @@ export async function fetchTopChartPieStatsIdByUserId(userId, context) {
 export async function fetchMonthlyInventoryBarStatsByUserId(userId, year) {
     return await apiGetStats(`/stats/inventory/total_created_per_month/${year}?user_id=${userId}`)
 }
+
+export async function fetchMonthlyReportCreatedBarStatsByUserId(userId, year) {
+    return await apiGetStats(`/stats/report/total_created_per_month/${year}?user_id=${userId}`)
+}

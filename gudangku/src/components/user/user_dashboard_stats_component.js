@@ -1,6 +1,7 @@
 import { loadDashboardByUserId } from '../../app/services/stats_service.js'
 import { renderTopChartPieStats } from './user_top_chart_pie_stats_component.js'
 import { renderMonthlyInventoryBarStats } from './user_inventory_monthly_bar_stats_component.js'
+import { renderMonthlyReportCreatedBarStats } from './user_report_created_monthly_bar_stats_component.js'
 import { generateSleepTime } from '../../helper/generator.js'
 
 export async function renderDashboardByUser(userId) {
@@ -47,6 +48,7 @@ export async function renderDashboardByUser(userId) {
                     </div>
                     <div style="display: grid; grid-template-columns: repeat(1, 1fr); gap: 1rem; padding: 1rem;">
                         <div class="container" style="text-align:center;" id="inventory-monthly-stats">Loading...</div>
+                        <div class="container" style="text-align:center;" id="report-created-monthly-stats">Loading...</div>
                     </div>
                 </div>
             `
@@ -54,6 +56,8 @@ export async function renderDashboardByUser(userId) {
             renderTopChartPieStats(userId)
             await generateSleepTime(1000)
             renderMonthlyInventoryBarStats(userId)
+            await generateSleepTime(1000)
+            renderMonthlyReportCreatedBarStats(userId)
         } else {
             holder.innerHTML = `
                 <div style="text-align: center;"><img src="assets/search.png" class="img"/><br><h6>Not enough data to show</h6></div>
