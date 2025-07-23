@@ -113,6 +113,7 @@ Individuals who assigned to manage and monitoring all GudangKu data accross all 
 | `src/app/usecases/`          | Business logic layer handling application workflows.                                     |                                |
 | `src/app/components/common/` | Shared and reusable components (buttons, modals, etc).                                   |                                        |
 | `src/app/const/`             | Constant values, enums, or static configuration.                                          |
+| `src/app/helper/`             | Utility or helper function that will help components or app to do its business.                                          |
 | `src/app/style/`             | Global styling (e.g., CSS/SCSS files).                                                   |
 | `main.js`                    | Main entry point for the application.                     |
 | `preload.js`                 | Preload script for context bridging between frontend and backend.     |

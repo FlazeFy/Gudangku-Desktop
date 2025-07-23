@@ -34,6 +34,6 @@ export async function apiGetTopChartPieStatsIdByUserId(path) {
     return res.json()
 }
 
-export async function fetchTopChartPieStatsIdByUserId(userId) {
-    return await apiGetTopChartPieStatsIdByUserId(`/stats/inventory/total_by_room/price?user_id=${userId}`)
+export async function fetchTopChartPieStatsIdByUserId(userId, context) {
+    return await apiGetTopChartPieStatsIdByUserId(`/stats/inventory/total_by_${context}/price?user_id=${userId}`)
 }

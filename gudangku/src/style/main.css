@@ -171,8 +171,9 @@ input, select {
     background-color: #1e1e1e;
     color: #fff;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;       
+    overflow-y: auto;            
+    max-height: 100vh;            
     font-size: 1.5rem;
 }
 #content-wrapper {
@@ -180,10 +181,14 @@ input, select {
     flex-direction: column;  
 }
 
-#main-content, #stats-content {
-    width: 100%;
-}
-
 .img {
     max-width: 15vw;
+}
+
+/* Apexchart */
+.apexcharts-legend-text {
+    color: #fff !important;
+}
+.apexcharts-yaxis-label, .apexcharts-xaxis-label, .apexcharts-title-text {
+    fill: #fff !important;
 }
