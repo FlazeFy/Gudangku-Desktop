@@ -1,8 +1,7 @@
 import { loadReport } from '../../app/services/report_service.js'
+import { renderReportDetailByReportId } from './report_detail_component.js'
 
-let currentPage = 1
-
-async function render(page = 1) {
+export async function render(page = 1) {
     let holder = document.querySelector('#reportList')
     holder.innerHTML = ''
 
@@ -13,7 +12,7 @@ async function render(page = 1) {
         data.forEach(dt => {
             holder.innerHTML += `
                 <div class="tree">
-                    <div class="folder">
+                    <div class="folder" data-report_id="${dt.id}">
                         <div>
                             <i class="fas fa-file"></i>
                         </div>
@@ -26,9 +25,17 @@ async function render(page = 1) {
                 </div>
             `
         })
+
+        document.querySelectorAll('.folder').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const userId = btn.dataset.report_id
+                
+                let holder = document.querySelector('#main-content')
+                holder.innerHTML = ''
+                renderReportDetailByReportId(userId)
+            })
+        })
     } catch (err) {
         holder.innerHTML = `<p>${err}</p>`
     }
 }
-
-render(currentPage)

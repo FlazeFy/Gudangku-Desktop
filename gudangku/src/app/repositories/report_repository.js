@@ -18,3 +18,7 @@ export async function apiGetAllReport(path) {
 export async function fetchReport(page = 1) {
     return await apiGetAllReport(`/report?page=${page}&per_page_key=36`)
 }
+
+export async function fetchReportDetailByReportId(reportId) {
+    return await apiGetAllReport(`/report/detail/item/${reportId}`)
+}

@@ -1,3 +1,48 @@
+:root {   
+    /* Typography */
+    --textXJumbo : 24px;
+    --textJumbo : 20px;
+    --textXLG : 18px;
+    --textLG : 16px;
+    --textXMD : 14px;
+    --textMD : 13px;
+    --textSM : 12px;
+    --textXSM : 11px;
+
+    /* Rounded */
+    --roundedCircle : 100%;
+    --roundedJumbo : 30px;
+    --roundedXLG : 24px;
+    --roundedLG : 18px;
+    --roundedMD : 14px;
+    --roundedSM : 12px;
+    --roundedMini : 6px;
+
+    /* Spacing */
+    --spaceJumbo : 35px;
+    --spaceXLG : 24px;
+    --spaceLG : 20px;
+    --spaceXMD : 16px;
+    --spaceMD : 12px;
+    --spaceSM : 10px;
+    --spaceXSM : 8px;
+    --spaceXXSM : 6px;
+    --spaceMini : 4px;
+
+    /* Color Pallete */
+    --successBG : #00C363;
+    --dangerBG : #DD0022;
+    --warningBG : #FFC352;
+    --infoBG : #1ba6f7;
+    --infoLightBG : #E7F4FE;
+    --hoverBG : #F2F2F2;
+    --primaryColor : #3b82f6;
+    --darkColor : #121725;
+    --whiteColor : #FFFFFF;
+    --greyColor : #adadad;
+    --shadowColor : #E0E0E0;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,45 +51,44 @@
 
 body {
     font-family: system-ui, sans-serif;
-    color: #faf7ff;
+    color: var(--hoverBG);
     display: flex;
     height: 100vh;
     font-family: "Segoe UI", sans-serif;
-    background-color: #1e1e1e;
-    color: #ccc;
+    background-color: var(--darkColor);
 }
 
 .container {
-    border: 1.5px solid white;
-    padding: 16px;
-    border-radius: 20px;
+    border: 1.5px solid var(--whiteColor);
+    padding: var(--spaceXMD);
+    border-radius: var(--roundedLG);
 }
   
 h1 {
     margin-bottom: 1rem;
 }
 label {
-    font-size: 14px;
-    margin-bottom: 8px;
+    font-size: var(--textXMD);
+    margin-bottom: var(--textXSM);
 }
   
 button {
-    background-color: #8685ef;
-    color: white;
+    background-color: var(--infoBG);
+    color: var(--whiteColor);
     padding: 0.5rem 1rem;
-    font-size: 15px;
+    font-size: var(--textXMD);
     border: none;
-    border-radius: 14px;
+    border-radius: var(--roundedMD);
     cursor: pointer;
 }
 button:hover {
-    background-color: #6563de;
+    background-color: var(--primaryColor);
 }
 .btn-tag {
-    padding: 8px 10px;
-    font-size: 12px;
+    padding: var(--spaceXSM) var(--spaceSM);
+    font-size: var(--textSM);
     display: inline-block;
-    border-radius: 10px;
+    border-radius: var(--roundedSM);
     font-weight: 500;
 }
   
@@ -52,107 +96,107 @@ table {
     width: 100%;
     margin-top: 1rem;
     border-collapse: collapse;
-    background-color: #212121;
-    border: 1px solid #faf7ff;
+    background-color: var(--darkColor);
+    border: 1px solid var(--whiteColor);
     border-radius: 0.375rem;
     overflow: hidden;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 } 
 table thead {
-    background-color: #212121;
+    background-color: var(--darkColor);
     font-size: 14px;
     font-weight: 500;
 } 
 table tbody {
-    font-size: 12.5px;
+    font-size: var(--textMD);
 }
 table th, table td {
     padding: 0.75rem;
     text-align: center;
-    border: 1px solid #faf7ff;
+    border: 1px solid var(--whiteColor);
 }  
 table tr:hover {
-    background-color: #212121;
+    background-color: var(--darkColor);
 }
   
-input, select {
-    padding: 8px 12px;
-    border-radius: 20px;
-    background: #414141;
-    color: #faf7ff;
-    margin-bottom: 10px;
+input, select, textarea {
+    padding: var(--spaceXSM) var(--spaceMD);
+    border-radius: var(--roundedLG);
+    background: var(--darkColor);
+    color: var(--whiteColor);
+    margin-bottom: var(--spaceSM);
 }
 
 .divider {
-    background: #faf7ff;
+    background: var(--whiteColor);
     height: 2px;
-    margin: 12px 0;
+    margin: var(--spaceMD) 0;
     width: 100%;
 }
 
 .bg-success {
-    background: #00c896;
+    background: var(--successBG);
 }
 
 .bg-danger {
-    background: #ff83b1;
+    background: var(--dangerBG);
 }
 
 .sidebar {
     width: 60px;
-    background-color: #252526;
+    background-color: var(--infoBG);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px 0;
+    padding: var(--spaceSM) 0;
     border-right: 1px solid #3c3c3c;
 }
 
 .sidebar-icon {
-    font-size: 20px;
+    font-size: var(--textJumbo);
     margin: 20px 0;
-    color: #ccc;
+    color: var(--whiteColor);
     cursor: pointer;
     transition: color 0.2s;
 }
 
 .sidebar-icon:hover {
-    color: #fff;
+    color: var(--whiteColor);
 }
 
 .explorer {
     width: 300px;
-    background-color: #1e1e1e;
-    padding: 10px;
+    background-color: var(--darkColor);
+    padding: var(--spaceSM);
     border-right: 1px solid #3c3c3c;
     overflow-y: auto;
 }
 
 .explorer h2 {
-    font-size: 14px;
-    color: #999;
-    margin-bottom: 10px;
+    font-size: var(--textXMD);
+    color: var(--greyColor);
+    margin-bottom: var(--spaceMini);
 }
 
 .folder, .file {
-    padding-left: 10px;
-    margin: 4px 0;
+    padding-left: var(--spaceSM);
+    margin: var(--spaceMini) 0;
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 13px;
+    gap: var(--spaceXSM);
+    font-size: var(--textMD);
     cursor: pointer;
 }
 
 .folder i, .file i {
-    width: 16px;
+    width: var(--spaceMD);
 }
 
 .folder {
     font-weight: 500;
-    color: #f4f4f4;
-    margin-bottom: 8px;
-    padding: 6px 6px;
+    color: var(--whiteColor);
+    margin-bottom: var(--spaceXSM);
+    padding: var(--spaceXXSM);
     width: 100%;
     background: transparent;
     text-align: start;
@@ -162,14 +206,14 @@ input, select {
 }
 
 .tree {
-    margin-left: 14px;
+    margin-left: var(--spaceXMD);
 }
 
 #main-content {
     flex: 1;
-    padding: 20px;
-    background-color: #1e1e1e;
-    color: #fff;
+    padding: var(--spaceLG);
+    background-color: var(--darkColor);
+    color: var(--whiteColor);
     display: flex;
     flex-direction: column;       
     overflow-y: auto;            
@@ -187,8 +231,26 @@ input, select {
 
 /* Apexchart */
 .apexcharts-legend-text {
-    color: #fff !important;
+    color: var(--whiteColor) !important;
 }
 .apexcharts-yaxis-label, .apexcharts-xaxis-label, .apexcharts-title-text {
-    fill: #fff !important;
+    fill: var(--whiteColor) !important;
+}
+
+.btn {
+    cursor: pointer;
+    padding: var(--spaceMD);
+    border-radius: var(--roundedMD);
+}
+.btn-warning {
+    background: var(--warningBG);
+}
+.btn-success {
+    background: var(--successBG);
+}
+.btn-danger {
+    background: var(--dangerBG);
+}
+.btn-primary {
+    background: var(--primaryColor);
 }

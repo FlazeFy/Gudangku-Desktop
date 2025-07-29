@@ -7,6 +7,15 @@ export const createInputRow = (label, value, type = 'text') => {
     `
 }
 
+export const createTextareaRow = (label, value) => {
+    return `
+        <div style="width: 100%; display: flex; gap: 1rem; margin-bottom: 1rem;">
+            <label style="width: 20%; font-weight: 500;">${label}</label>
+            <textarea style="flex: 1; min-height:100px;" value="${value ?? ''}">${value ?? ''}</textarea>
+        </div>
+    `
+}
+
 export const createCheckboxRow = (label, checked) => {
     return `
         <div style="width: 100%; display: flex; gap: 1rem; margin-bottom: 1rem;">
