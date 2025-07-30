@@ -9,3 +9,7 @@ export async function getReportDetailByReportId(api, reportId) {
 export async function getReportDocByReportId(api, reportId) {
     return await api.fetchReportDocByReportId(reportId)
 }
+
+export async function deleteReportItemByReportItemId(api, reportId) {
+    return await api.hardDeleteReportItemByReportItemId(reportId)
+}
