@@ -1,4 +1,5 @@
 import { createCheckboxRow, createInputRow, createParagraphRow, createSelectRow } from '../common/form_component.js'
+import { renderInventoryDocByInventoryId } from './inventory_doc_component.js'
 
 export function renderDetail(data) {
     const holder = document.querySelector('#main-content')
@@ -36,5 +37,10 @@ export function renderDetail(data) {
         ${createCheckboxRow('Favorite', data.is_favorite)}
         ${createParagraphRow('Created At', data.created_at)}
         ${createParagraphRow('Updated At', data.updated_at)}
+        <div class="divider"></div><br>
+        <h3 style='margin-bottom:10px;'>PDF Report</h3>
+        <div id="doc-holder" style="min-height: 92.5vh;"></div>
     `
+
+    renderInventoryDocByInventoryId(data.id)
 }

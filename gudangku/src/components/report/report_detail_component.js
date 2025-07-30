@@ -63,9 +63,7 @@ export async function renderReportDetailByReportId(reportId) {
                             <td>Remove</td>
                         </tr>
                     </thead>
-                    <tbody>
-                        ${tbody}
-                    </tbody>
+                    <tbody>${tbody}</tbody>
                 </table>
                 <br><div class="divider"></div><br>
                 <h3 style='margin-bottom:10px;'>PDF Report</h3>

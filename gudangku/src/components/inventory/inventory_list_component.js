@@ -9,7 +9,7 @@ async function render(page = 1) {
 
     try {
         const res = await loadInventory(page)
-        const data = res.data.data
+        const data = res.body.data.data
 
         data.forEach((dt,idx) => {
             holder.innerHTML += `
