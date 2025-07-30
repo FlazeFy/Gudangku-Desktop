@@ -3,8 +3,9 @@ import { createInputRow, createTextareaRow, createParagraphRow, createSelectRow 
 import { number_format } from '../../helper/converter.js'
 import { renderReportDocByReport } from './report_doc_component.js'
 import { btnRemoveReportItemByItemId } from './btn_remove_report_item_component.js'
+import { btnDeleteReportById } from './btn_delete_report_component.js'
 
-export async function renderReportDetailByReportId(reportId) {
+export async function renderReportDetailByReportId(reportId, renderListReport) {
     let holder = document.querySelector('#main-content')
 
     holder.style.display = 'flex'
@@ -36,7 +37,7 @@ export async function renderReportDetailByReportId(reportId) {
                             <td>${el.item_price ? `Rp. ${number_format(el.item_price, 0, ',', '.')}` : '-'}</td>
                             <td>${el.created_at}</td>
                             <td><a class="btn btn-warning"><i class="fas fa-pen-to-square"></i></a></td>
-                            <td><a class="btn btn-danger btn-delete" data-id="${el.id}" data-item_name="${el.item_name}" data-report_title="${data.report_title}"><i class="fas fa-fire"></i></a></td>
+                            <td><a class="btn btn-danger btn-delete" data-id="${el.id}" data-item_name="${el.item_name}" data-report_title="${data.report_title}"><i class="fas fa-trash"></i></a></td>
                         </tr>
                     `
                 });
@@ -67,11 +68,15 @@ export async function renderReportDetailByReportId(reportId) {
                     <tbody>${tbody}</tbody>
                 </table>
                 <br><div class="divider"></div><br>
+                <h3 style='margin-bottom:10px;'>Manage</h3>
+                <a class='btn btn-danger' id="btn-delete-report" data-id="${reportId}" data-report_title="${data.report_title}"><i class="fas fa-trash"></i> Delete</a>
+                <div class="divider"></div><br>
                 <h3 style='margin-bottom:10px;'>PDF Report</h3>
                 <div id="doc-holder" style="min-height: 92.5vh;"></div>
             `
 
             btnRemoveReportItemByItemId(reportId, renderReportDetailByReportId)
+            btnDeleteReportById(reportId, renderListReport)
             renderReportDocByReport(reportId)
         }
     } catch (err) {

@@ -13,3 +13,7 @@ export async function getReportDocByReportId(api, reportId) {
 export async function deleteReportItemByReportItemId(api, reportId) {
     return await api.hardDeleteReportItemByReportItemId(reportId)
 }
+
+export async function usecaseDeleteReportById(api, reportId) {
+    return await api.repoHardDeleteReportById(reportId)
+}

@@ -35,3 +35,7 @@ export async function fetchReportDocByReportId(reportId) {
 export async function hardDeleteReportItemByReportItemId(reportId) {
     return await apiReport(`/delete/item/${reportId}`,'DELETE')
 }
+
+export async function repoHardDeleteReportById(reportId) {
+    return await apiReport(`/delete/report/${reportId}`,'DELETE')
+}

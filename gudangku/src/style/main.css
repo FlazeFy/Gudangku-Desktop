@@ -241,6 +241,7 @@ input, select, textarea {
     cursor: pointer;
     padding: var(--spaceMD);
     border-radius: var(--roundedMD);
+    font-size: var(--textXMD);
 }
 .btn-warning {
     background: var(--warningBG);

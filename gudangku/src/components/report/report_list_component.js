@@ -32,7 +32,7 @@ export async function render(page = 1) {
                 
                 let holder = document.querySelector('#main-content')
                 holder.innerHTML = ''
-                renderReportDetailByReportId(userId)
+                renderReportDetailByReportId(userId, render)
             })
         })
     } catch (err) {
