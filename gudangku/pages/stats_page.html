@@ -7,7 +7,10 @@
     <script type="module" src="../src/components/user/user_list_component.js"></script>
     <script type="module" src="../src/components/common/navigation_component.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Apexchart -->
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!-- Swal -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <!-- Sidebar -->
@@ -18,7 +21,7 @@
         <a id="btn-user-page"><i class="fas fa-user sidebar-icon" title="Users"></i></a>
         <a id="btn-report-page"><i class="fas fa-file sidebar-icon" title="Report"></i></a>
         <a id="btn-history-page"><i class="fas fa-rotate-left sidebar-icon" title="History"></i></a>
-        <a id="btn-logout-page"><i class="fas fa-sign-out-alt sidebar-icon" title="Logout"></i></a>
+        <a id="btn-logout-modal"><i class="fas fa-sign-out-alt sidebar-icon" title="Logout"></i></a>
     </div>
     
     <div class="explorer">
@@ -34,7 +37,10 @@
 
     <script type="module">
         import { render } from '../src/components/user/user_list_component.js'
+        import { setupSignOutForm } from '../src/components/auth/auth_signout_component.js'
+
         render(null, 'stats')
+        setupSignOutForm()
     </script>
 </body>
 </html>
