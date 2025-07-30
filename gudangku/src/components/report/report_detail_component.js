@@ -1,8 +1,9 @@
 import { loadReportDetailByReportId } from '../../app/services/report_service.js'
 import {createInputRow, createTextareaRow, createParagraphRow, createSelectRow } from '../common/form_component.js'
 import { number_format } from '../../helper/converter.js'
+import { renderReportDocByReport } from './report_doc_component.js'
 
-export async function renderReportDetailByReportId(userId) {
+export async function renderReportDetailByReportId(reportId) {
     let holder = document.querySelector('#main-content')
 
     holder.style.display = 'flex'
@@ -16,9 +17,9 @@ export async function renderReportDetailByReportId(userId) {
     }
 
     try {
-        const res = await loadReportDetailByReportId(userId)
-        const data = res.data
-        const data_item = res.data_item
+        const res = await loadReportDetailByReportId(reportId)
+        const data = res.body.data
+        const data_item = res.body.data_item
 
         if(data) {
             let tbody = `<tr><td colspan='8' style='color:white;'>- No Item Attached -</td></td>`
@@ -66,7 +67,12 @@ export async function renderReportDetailByReportId(userId) {
                         ${tbody}
                     </tbody>
                 </table>
+                <br><div class="divider"></div><br>
+                <h3 style='margin-bottom:10px;'>PDF Report</h3>
+                <div id="doc-holder" style="min-height: 92.5vh;"></div>
             `
+
+            renderReportDocByReport(reportId)
         }
     } catch (err) {
         holder.innerHTML = `<p>${err}</p>`

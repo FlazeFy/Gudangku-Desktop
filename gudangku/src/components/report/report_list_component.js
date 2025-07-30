@@ -7,7 +7,7 @@ export async function render(page = 1) {
 
     try {
         const res = await loadReport(page)
-        const data = res.data.data
+        const data = res.body.data.data
 
         data.forEach(dt => {
             holder.innerHTML += `
