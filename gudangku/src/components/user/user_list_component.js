@@ -1,5 +1,6 @@
 import { loadUser } from '../../app/services/user_service.js'
 import { renderDashboardByUser } from './user_dashboard_stats_component.js'
+import { renderHistoryByUser } from './user_history_component.js'
 
 export async function render(page = 1, module) {
     let holder = document.querySelector('#userList')
@@ -26,6 +27,13 @@ export async function render(page = 1, module) {
                     let holder = document.querySelector('#main-content')
                     holder.innerHTML = ''
                     renderDashboardByUser(userId)
+                } else if(module == 'user'){
+                    let holder = document.querySelector('#main-content')
+                    holder.innerHTML = `
+                        <h3>History</h3>
+                        <div id="history-holder"></div>
+                    `
+                    renderHistoryByUser(userId)
                 }
             })
         })

@@ -10,9 +10,9 @@ async function render(page = 1) {
 
     try {
         const res = await loadHistory(page)
-        const data = res.data.data
-        const curr_page = res.data.current_page
-        const last_page = res.data.last_page
+        const data = res.body.data.data
+        const curr_page = res.body.data.current_page
+        const last_page = res.body.data.last_page
 
         data.forEach(dt => {
             const tr = document.createElement('tr')
