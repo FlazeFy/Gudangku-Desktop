@@ -1,10 +1,10 @@
 import { API_BASE_URL } from '../../const/config.js'
 
-export async function apiGetHistory(path) {
+export async function apiHistory(path,method) {
     const token = localStorage.getItem('token')
 
     const res = await fetch(`${API_BASE_URL}/history${path}`, {
-        method: 'GET',
+        method: method,
         headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -21,9 +21,13 @@ export async function apiGetHistory(path) {
 }
 
 export async function fetchHistory(page = 1) {
-    return await apiGetHistory(`?page=${page}&per_page_key=24`)
+    return await apiHistory(`?page=${page}&per_page_key=24`,'GET')
 }
 
 export async function fetchHistoryByUserId(userId, page = 1) {
-    return await apiGetHistory(`?page=${page}&per_page_key=24&user_id=${userId}`)
+    return await apiHistory(`?page=${page}&per_page_key=24&user_id=${userId}`,'GET')
+}
+
+export async function hardDeleteHistoryById(id) {
+    return await apiHistory(`/destroy/${id}`,'DELETE')
 }

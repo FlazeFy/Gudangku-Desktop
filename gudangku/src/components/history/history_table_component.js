@@ -1,4 +1,5 @@
 import { loadHistory } from '../../app/services/history_service.js'
+import { btnDeleteHistoryById } from './btn_delete_history_component.js'
 
 let currentPage = 1
 
@@ -21,6 +22,7 @@ async function render(page = 1) {
                 <td>${dt.history_type}</td>
                 <td>${dt.history_context}</td>
                 <td>${new Date(dt.created_at).toLocaleString()}</td>
+                <td><a class="btn btn-danger btn-delete" data-id="${dt.id}" data-history_type="${dt.history_type}" data-history_context="${dt.history_context}"><i class="fas fa-trash"></i></a></td>
             `
             tbody.appendChild(tr)
         })
@@ -39,6 +41,8 @@ async function render(page = 1) {
         pagination.appendChild(prev)
         pagination.append(` Page ${curr_page} of ${last_page}`)
         pagination.appendChild(next)
+
+        btnDeleteHistoryById(render,page)
     } catch (err) {
         tbody.innerHTML = `<tr><td colspan="4">${err}</td></tr>`
     }
