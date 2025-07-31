@@ -1,14 +1,14 @@
-import { serviceDeleteReportById } from "../../app/services/report_service.js";
+import { serviceSoftDeleteInventoryById } from "../../app/services/inventory_service.js";
 
-export function btnDeleteReportById(renderListReport) {
-    document.querySelectorAll('#btn-delete-report').forEach(btn => {
+export function btnDeleteInventoryById() {
+    document.querySelectorAll('#btn-delete-inventory').forEach(btn => {
         btn.addEventListener('click', async (e) => {
-            const reportName = btn.dataset.report_title
+            const inventoryName = btn.dataset.inventory_name
             const id = btn.dataset.id
 
             const modal_permission = await Swal.fire({
                 title: "Are you sure!",
-                text: `Are you sure want to Permentally Delete this report "${reportName}"?`,
+                text: `Are you sure want to Delete this inventory "${inventoryName}"?`,
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonText: "Yes, Delete",
@@ -18,7 +18,7 @@ export function btnDeleteReportById(renderListReport) {
 
             if (modal_permission.isConfirmed) {
                 try {
-                    const res = await serviceDeleteReportById(id)
+                    const res = await serviceSoftDeleteInventoryById(id)
 
                     const modal_res_signout = await Swal.fire({
                         title: res.status === 200 ? "Success!" : "Failed!",
@@ -30,7 +30,7 @@ export function btnDeleteReportById(renderListReport) {
                     if (modal_res_signout.isConfirmed) {
                         let holder = document.querySelector('#main-content')
                         holder.innerHTML = ''
-                        renderListReport(1)
+                        render(1)
                     }
                 } catch (err) {
                     Swal.fire({

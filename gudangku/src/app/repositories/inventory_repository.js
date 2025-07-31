@@ -24,7 +24,10 @@ export async function repoFetchInventory(page = 1) {
     return await apiInventory(`?page=${page}&per_page_key=36`,'GET')
 }
 
-
 export async function repoFetchInventoryDocByInventoryId(inventoryId) {
     return await apiInventory(`/detail/${inventoryId}/doc`,'GET')
+}
+
+export async function repoSoftDeleteInventoryById(inventoryId) {
+    return await apiInventory(`/delete/${inventoryId}`,'DELETE')
 }

@@ -76,7 +76,7 @@ export async function renderReportDetailByReportId(reportId, renderListReport) {
             `
 
             btnRemoveReportItemByItemId(reportId, renderReportDetailByReportId)
-            btnDeleteReportById(reportId, renderListReport)
+            btnDeleteReportById(renderListReport)
             renderReportDocByReport(reportId)
         }
     } catch (err) {
