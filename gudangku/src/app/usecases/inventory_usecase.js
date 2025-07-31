@@ -9,3 +9,7 @@ export async function usecaseGetInventoryDocByInventoryId(api, inventoryId) {
 export async function usecaseSoftDeleteInventoryById(api, inventoryId) {
     return await api.repoSoftDeleteInventoryById(inventoryId)
 }
+
+export async function usecaseRecoverInventoryById(api, inventoryId) {
+    return await api.repoRecoverInventoryById(inventoryId)
+}

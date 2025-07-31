@@ -1,5 +1,6 @@
 import { createCheckboxRow, createInputRow, createParagraphRow, createSelectRow } from '../common/form_component.js'
 import { btnDeleteInventoryById } from './btn_delete_inventory_component.js'
+import { btnRecoverInventoryById } from './btn_recover_inventory_component.js'
 import { renderInventoryDocByInventoryId } from './inventory_doc_component.js'
 
 export function renderDetail(data) {
@@ -41,6 +42,7 @@ export function renderDetail(data) {
         <div class="divider"></div><br>
         <h3 style='margin-bottom:10px;'>Manage</h3>
         <a class='btn btn-danger' id="btn-delete-inventory" data-id="${data.id}" data-inventory_name="${data.inventory_name}"><i class="fas fa-trash"></i> Delete</a>
+        ${data.deleted_at ? `<a class='btn btn-success' id="btn-recover-inventory" data-id="${data.id}" data-inventory_name="${data.inventory_name}"><i class="fas fa-rotate-left"></i> Recover</a`:''}
         <div class="divider"></div><br>
         <h3 style='margin-bottom:10px;'>PDF Report</h3>
         <div id="doc-holder" style="min-height: 92.5vh;"></div>
@@ -48,4 +50,5 @@ export function renderDetail(data) {
 
     renderInventoryDocByInventoryId(data.id)
     btnDeleteInventoryById()
+    btnRecoverInventoryById()
 }

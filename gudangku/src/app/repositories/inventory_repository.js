@@ -31,3 +31,7 @@ export async function repoFetchInventoryDocByInventoryId(inventoryId) {
 export async function repoSoftDeleteInventoryById(inventoryId) {
     return await apiInventory(`/delete/${inventoryId}`,'DELETE')
 }
+
+export async function repoRecoverInventoryById(inventoryId) {
+    return await apiInventory(`/recover/${inventoryId}`,'PUT')
+}
