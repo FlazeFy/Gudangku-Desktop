@@ -1,4 +1,4 @@
-import { loginAdmin } from '../../app/services/auth_service.js'
+import { serviceLoginAdmin } from '../../app/services/auth_service.js'
 import { UNKNOWN_ERROR } from '../../const/message.js'
 
 export function setupLoginForm() {
@@ -12,7 +12,7 @@ export function setupLoginForm() {
         const password = document.getElementById('password').value
 
         try {
-            const res = await loginAdmin(username, password)
+            const res = await serviceLoginAdmin(username, password)
 
             if (res.role !== 1) {
                 errorMsg.textContent = 'Invalid credentials or not admin role.'

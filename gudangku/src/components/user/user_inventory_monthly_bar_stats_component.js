@@ -1,11 +1,11 @@
-import { loadMonthlyInventoryBarStatsByUserId } from '../../app/services/stats_service.js'
+import { serviceLoadMonthlyInventoryBarStatsByUserId } from '../../app/services/stats_service.js'
 
 export async function renderMonthlyInventoryBarStats(userId) {
     const holder = document.getElementById('inventory-monthly-stats')
     holder.innerHTML = ''
 
     try {
-        const res = await loadMonthlyInventoryBarStatsByUserId(userId, 2025)
+        const res = await serviceLoadMonthlyInventoryBarStatsByUserId(userId, 2025)
 
         if(res.status == 200){
             const data = res.data.data

@@ -1,10 +1,10 @@
-import { loadInventoryDocByInventoryId } from '../../app/services/inventory_service.js'
+import { serviceLoadInventoryDocByInventoryId } from '../../app/services/inventory_service.js'
 
 export async function renderInventoryDocByInventoryId(inventoryId) {
     let holder = document.querySelector('#doc-holder')
 
     try {
-        const res = await loadInventoryDocByInventoryId(inventoryId)
+        const res = await serviceLoadInventoryDocByInventoryId(inventoryId)
 
         if(res.status == 200) {
             const data = res.body.data

@@ -1,4 +1,4 @@
-import { signOutAdmin } from "../../app/services/auth_service.js";
+import { serviceSignOutAdmin } from "../../app/services/auth_service.js";
 
 export function setupSignOutForm() {
     const signOutButton = document.getElementById('btn-logout-modal')
@@ -16,7 +16,7 @@ export function setupSignOutForm() {
 
         if (modal_permission.isConfirmed) {
             try {
-                const res = await signOutAdmin();
+                const res = await serviceSignOutAdmin();
 
                 const modal_res_signout = await Swal.fire({
                     title: res.status === 200 ? "Success!" : "Failed!",

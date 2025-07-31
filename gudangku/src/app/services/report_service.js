@@ -1,20 +1,20 @@
 import * as api from '../repositories/report_repository.js'
-import { getReport, getReportDetailByReportId, getReportDocByReportId, deleteReportItemByReportItemId, usecaseDeleteReportById } from '../usecases/report_usecase.js'
+import { usecaseGetReport, usecaseGetReportDetailByReportId, usecaseGetReportDocByReportId, usecaseDeleteReportItemByReportItemId, usecaseDeleteReportById } from '../usecases/report_usecase.js'
 
-export async function loadReport(page = 1) {
-  return await getReport(api, page)
+export async function serviceLoadReport(page = 1) {
+  return await usecaseGetReport(api, page)
 }
 
-export async function loadReportDetailByReportId(reportId){
-  return await getReportDetailByReportId(api, reportId)
+export async function serviceLoadReportDetailByReportId(reportId){
+  return await usecaseGetReportDetailByReportId(api, reportId)
 }
 
-export async function loadReportDocByReportId(reportId){
-  return await getReportDocByReportId(api, reportId)
+export async function serviceLoadReportDocByReportId(reportId){
+  return await usecaseGetReportDocByReportId(api, reportId)
 }
 
-export async function removeReportItemByReportItemId(reportId){
-  return await deleteReportItemByReportItemId(api, reportId)
+export async function serviceRemoveReportItemByReportItemId(reportId){
+  return await usecaseDeleteReportItemByReportItemId(api, reportId)
 }
 
 export async function serviceDeleteReportById(reportId){

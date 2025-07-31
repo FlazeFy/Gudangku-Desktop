@@ -1,10 +1,10 @@
 import * as api from '../repositories/inventory_repository.js'
-import { getInventory, getInventoryDocByInventoryId  } from '../usecases/inventory_usecase.js'
+import { usecaseGetInventory, usecaseGetInventoryDocByInventoryId  } from '../usecases/inventory_usecase.js'
 
-export async function loadInventory(page = 1) {
-  return await getInventory(api, page)
+export async function serviceLoadInventory(page = 1) {
+  return await usecaseGetInventory(api, page)
 }
 
-export async function loadInventoryDocByInventoryId(inventoryId){
-  return await getInventoryDocByInventoryId(api, inventoryId)
+export async function serviceLoadInventoryDocByInventoryId(inventoryId){
+  return await usecaseGetInventoryDocByInventoryId(api, inventoryId)
 }

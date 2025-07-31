@@ -20,14 +20,14 @@ export async function apiHistory(path,method) {
     }
 }
 
-export async function fetchHistory(page = 1) {
+export async function repoFetchHistory(page = 1) {
     return await apiHistory(`?page=${page}&per_page_key=24`,'GET')
 }
 
-export async function fetchHistoryByUserId(userId, page = 1) {
+export async function repoFetchHistoryByUserId(userId, page = 1) {
     return await apiHistory(`?page=${page}&per_page_key=24&user_id=${userId}`,'GET')
 }
 
-export async function hardDeleteHistoryById(id) {
+export async function repoHardDeleteHistoryById(id) {
     return await apiHistory(`/destroy/${id}`,'DELETE')
 }

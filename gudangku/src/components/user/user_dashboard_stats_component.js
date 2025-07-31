@@ -1,4 +1,4 @@
-import { loadDashboardByUserId } from '../../app/services/stats_service.js'
+import { serviceLoadDashboardByUserId } from '../../app/services/stats_service.js'
 import { renderTopChartPieStats } from './user_top_chart_pie_stats_component.js'
 import { renderMonthlyInventoryBarStats } from './user_inventory_monthly_bar_stats_component.js'
 import { renderMonthlyReportCreatedBarStats } from './user_report_created_monthly_bar_stats_component.js'
@@ -8,7 +8,7 @@ export async function renderDashboardByUser(userId) {
     let holder = document.querySelector('#main-content')
 
     try {
-        const res = await loadDashboardByUserId(userId)
+        const res = await serviceLoadDashboardByUserId(userId)
         const data = res.data.data
 
         if(data.total_item > 0) {

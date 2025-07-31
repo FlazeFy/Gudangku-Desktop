@@ -1,8 +1,8 @@
-export async function login(api, username, password) {
-    return await api.apiLogin(username, password)
+export async function usecaseLogin(api, username, password) {
+    return await api.repoLogin(username, password)
 }
 
-export async function signOut(api) {
-    return await api.apiSignOut()
+export async function usecaseSignOut(api) {
+    return await api.repoSignOut()
 }
   

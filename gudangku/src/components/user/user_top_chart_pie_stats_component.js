@@ -1,4 +1,4 @@
-import { loadTopChartPieStatsIdByUserId } from '../../app/services/stats_service.js'
+import { serviceLoadTopChartPieStatsIdByUserId } from '../../app/services/stats_service.js'
 import { converterUcFirst } from '../../helper/converter.js'
 import { generateSleepTime } from '../../helper/generator.js'
 
@@ -15,7 +15,7 @@ export async function renderTopChartPieStats(userId) {
         holder.innerHTML = ''
 
         try {
-            const res = await loadTopChartPieStatsIdByUserId(userId, el.context)
+            const res = await serviceLoadTopChartPieStatsIdByUserId(userId, el.context)
             const data = res.data.data
 
             const labels = data.map(item => item.context)

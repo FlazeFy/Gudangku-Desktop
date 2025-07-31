@@ -1,11 +1,11 @@
-import { loadMonthlyReportCreatedBarStatsByUserId } from '../../app/services/stats_service.js'
+import { serviceLoadMonthlyReportCreatedBarStatsByUserId } from '../../app/services/stats_service.js'
 
 export async function renderMonthlyReportCreatedBarStats(userId) {
     const holder = document.getElementById('report-created-monthly-stats')
     holder.innerHTML = ''
 
     try {
-        const res = await loadMonthlyReportCreatedBarStatsByUserId(userId, 2025)
+        const res = await serviceLoadMonthlyReportCreatedBarStatsByUserId(userId, 2025)
 
         if(res.status == 200){
             const data = res.data.data

@@ -1,4 +1,4 @@
-import { removeHistoryById } from "../../app/services/history_service.js"
+import { serviceRemoveHistoryById } from "../../app/services/history_service.js"
 
 export function btnDeleteHistoryById(render,page) {
     document.querySelectorAll('.btn-delete').forEach(btn => {
@@ -19,7 +19,7 @@ export function btnDeleteHistoryById(render,page) {
 
             if (modal_permission.isConfirmed) {
                 try {
-                    const res = await removeHistoryById(id)
+                    const res = await serviceRemoveHistoryById(id)
 
                     const modal_res_signout = await Swal.fire({
                         title: res.status === 200 ? "Success!" : "Failed!",

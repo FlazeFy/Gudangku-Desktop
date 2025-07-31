@@ -1,3 +1,3 @@
-export async function getUser(api, page) {
-    return await api.fetchUser(page)
+export async function usecaseGetUser(api, page) {
+    return await api.repoFetchUser(page)
 }

@@ -1,10 +1,10 @@
-import { loadReportDocByReportId } from '../../app/services/report_service.js'
+import { serviceLoadReportDocByReportId } from '../../app/services/report_service.js'
 
 export async function renderReportDocByReport(reportId) {
     let holder = document.querySelector('#doc-holder')
 
     try {
-        const res = await loadReportDocByReportId(reportId)
+        const res = await serviceLoadReportDocByReportId(reportId)
 
         if(res.status == 200) {
             const data = res.body.data

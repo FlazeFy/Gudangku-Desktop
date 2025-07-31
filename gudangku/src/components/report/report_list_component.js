@@ -1,4 +1,4 @@
-import { loadReport } from '../../app/services/report_service.js'
+import { serviceLoadReport } from '../../app/services/report_service.js'
 import { renderReportDetailByReportId } from './report_detail_component.js'
 
 export async function render(page = 1) {
@@ -6,7 +6,7 @@ export async function render(page = 1) {
     holder.innerHTML = ''
 
     try {
-        const res = await loadReport(page)
+        const res = await serviceLoadReport(page)
         const data = res.body.data.data
 
         data.forEach(dt => {

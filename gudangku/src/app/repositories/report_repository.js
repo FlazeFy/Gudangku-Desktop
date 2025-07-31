@@ -20,19 +20,19 @@ export async function apiReport(path,method) {
     }
 }
 
-export async function fetchReport(page = 1) {
+export async function repoFetchReport(page = 1) {
     return await apiReport(`?page=${page}&per_page_key=36`,'GET')
 }
 
-export async function fetchReportDetailByReportId(reportId) {
+export async function repoFetchReportDetailByReportId(reportId) {
     return await apiReport(`/detail/item/${reportId}`,'GET')
 }
 
-export async function fetchReportDocByReportId(reportId) {
+export async function repoFetchReportDocByReportId(reportId) {
     return await apiReport(`/detail/item/${reportId}/doc`,'GET')
 }
 
-export async function hardDeleteReportItemByReportItemId(reportId) {
+export async function repoHardDeleteReportItemByReportItemId(reportId) {
     return await apiReport(`/delete/item/${reportId}`,'DELETE')
 }
 

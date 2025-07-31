@@ -1,11 +1,11 @@
-import { loadHistoryByUserId } from '../../app/services/history_service.js'
+import { serviceLoadHistoryByUserId } from '../../app/services/history_service.js'
 
 export async function renderHistoryByUser(userId) {
     let holder = document.querySelector('#history-holder')
 
     try {
         let page = 1
-        const res = await loadHistoryByUserId(userId, page)
+        const res = await serviceLoadHistoryByUserId(userId, page)
 
         if(res.status == 200) {
             const data = res.body.data.data

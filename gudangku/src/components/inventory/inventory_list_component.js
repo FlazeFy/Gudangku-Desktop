@@ -1,4 +1,4 @@
-import { loadInventory } from '../../app/services/inventory_service.js'
+import { serviceLoadInventory } from '../../app/services/inventory_service.js'
 import { renderDetail } from './inventory_detail_component.js'
 
 let currentPage = 1
@@ -8,7 +8,7 @@ async function render(page = 1) {
     holder.innerHTML = ''
 
     try {
-        const res = await loadInventory(page)
+        const res = await serviceLoadInventory(page)
         const data = res.body.data.data
 
         data.forEach((dt,idx) => {

@@ -1,10 +1,10 @@
 import { API_BASE_URL } from '../../const/config.js'
 
-export async function apiGetInventory(path) {
+export async function apiInventory(path, method) {
     const token = localStorage.getItem('token')
 
     const res = await fetch(`${API_BASE_URL}/inventory${path}`, {
-        method: 'GET',
+        method: method,
         headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -20,11 +20,11 @@ export async function apiGetInventory(path) {
     }
 }
 
-export async function fetchInventory(page = 1) {
-    return await apiGetInventory(`?page=${page}&per_page_key=36`)
+export async function repoFetchInventory(page = 1) {
+    return await apiInventory(`?page=${page}&per_page_key=36`,'GET')
 }
 
 
-export async function fetchInventoryDocByInventoryId(inventoryId) {
-    return await apiGetInventory(`/detail/${inventoryId}/doc`)
+export async function repoFetchInventoryDocByInventoryId(inventoryId) {
+    return await apiInventory(`/detail/${inventoryId}/doc`,'GET')
 }

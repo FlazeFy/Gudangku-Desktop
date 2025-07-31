@@ -1,15 +1,15 @@
-export async function getDashboardByUserId(api, userId) {
-    return await api.fetchDashboardByUserId(userId)
+export async function usecaseGetDashboardByUserId(api, userId) {
+    return await api.repoFetchDashboardByUserId(userId)
 }
 
-export async function getTopChartPieStatsIdByUserId(api, userId, context) {
-    return await api.fetchTopChartPieStatsIdByUserId(userId, context)
+export async function usecaseGetTopChartPieStatsIdByUserId(api, userId, context) {
+    return await api.repoFetchTopChartPieStatsIdByUserId(userId, context)
 }
 
-export async function getMonthlyInventoryBarStatsByUserId(api, userId, year) {
-    return await api.fetchMonthlyInventoryBarStatsByUserId(userId, year)
+export async function usecaseGetMonthlyInventoryBarStatsByUserId(api, userId, year) {
+    return await api.repoFetchMonthlyInventoryBarStatsByUserId(userId, year)
 }
 
-export async function getMonthlyReportCreatedBarStatsByUserId(api, userId, year) {
-    return await api.fetchMonthlyReportCreatedBarStatsByUserId(userId, year)
+export async function usecaseGetMonthlyReportCreatedBarStatsByUserId(api, userId, year) {
+    return await api.repoFetchMonthlyReportCreatedBarStatsByUserId(userId, year)
 }

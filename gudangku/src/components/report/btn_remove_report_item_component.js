@@ -1,4 +1,4 @@
-import { removeReportItemByReportItemId } from "../../app/services/report_service.js";
+import { serviceRemoveReportItemByReportItemId } from "../../app/services/report_service.js";
 
 export function btnRemoveReportItemByItemId(reportId, renderReportDetailByReportId) {
     document.querySelectorAll('.btn-delete').forEach(btn => {
@@ -19,7 +19,7 @@ export function btnRemoveReportItemByItemId(reportId, renderReportDetailByReport
 
             if (modal_permission.isConfirmed) {
                 try {
-                    const res = await removeReportItemByReportItemId(id)
+                    const res = await serviceRemoveReportItemByReportItemId(id)
 
                     const modal_res_signout = await Swal.fire({
                         title: res.status === 200 ? "Success!" : "Failed!",

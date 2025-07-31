@@ -1,6 +1,6 @@
 import { API_BASE_URL } from '../../const/config.js'
 
-export async function apiLogin(username, password) {
+export async function repoLogin(username, password) {
     const res = await fetch(`${API_BASE_URL}/login`, {
         method: 'POST',
         headers: {
@@ -14,7 +14,7 @@ export async function apiLogin(username, password) {
     return data
 }
 
-export async function apiSignOut() {
+export async function repoSignOut() {
     const token = localStorage.getItem('token')
 
     const res = await fetch(`${API_BASE_URL}/logout`, {

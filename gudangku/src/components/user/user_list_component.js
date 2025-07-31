@@ -1,4 +1,4 @@
-import { loadUser } from '../../app/services/user_service.js'
+import { serviceLoadUser } from '../../app/services/user_service.js'
 import { renderDashboardByUser } from './user_dashboard_stats_component.js'
 import { renderHistoryByUser } from './user_history_component.js'
 
@@ -7,7 +7,7 @@ export async function render(page = 1, module) {
     holder.innerHTML = ''
 
     try {
-        const res = await loadUser(page)
+        const res = await serviceLoadUser(page)
         const data = res.data.data
 
         data.forEach(dt => {

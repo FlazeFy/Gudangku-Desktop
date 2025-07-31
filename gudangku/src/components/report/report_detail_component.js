@@ -1,4 +1,4 @@
-import { loadReportDetailByReportId } from '../../app/services/report_service.js'
+import { serviceLoadReportDetailByReportId } from '../../app/services/report_service.js'
 import { createInputRow, createTextareaRow, createParagraphRow, createSelectRow } from '../common/form_component.js'
 import { number_format } from '../../helper/converter.js'
 import { renderReportDocByReport } from './report_doc_component.js'
@@ -19,7 +19,7 @@ export async function renderReportDetailByReportId(reportId, renderListReport) {
     }
 
     try {
-        const res = await loadReportDetailByReportId(reportId)
+        const res = await serviceLoadReportDetailByReportId(reportId)
         const data = res.body.data
         const data_item = res.body.data_item
 

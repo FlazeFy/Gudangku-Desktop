@@ -15,6 +15,6 @@ export async function apiGetAllUser(path) {
     return res.json()
 }
 
-export async function fetchUser(page = 1) {
+export async function repoFetchUser(page = 1) {
     return await apiGetAllUser(`/user?page=${page}&per_page_key=36`)
 }

@@ -1,4 +1,4 @@
-import { loadHistory } from '../../app/services/history_service.js'
+import { serviceLoadHistory } from '../../app/services/history_service.js'
 import { btnDeleteHistoryById } from './btn_delete_history_component.js'
 
 let currentPage = 1
@@ -10,7 +10,7 @@ async function render(page = 1) {
     pagination.innerHTML = ''
 
     try {
-        const res = await loadHistory(page)
+        const res = await serviceLoadHistory(page)
         const data = res.body.data.data
         const curr_page = res.body.data.current_page
         const last_page = res.body.data.last_page

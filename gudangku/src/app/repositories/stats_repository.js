@@ -20,18 +20,18 @@ export async function apiGetStats(path) {
     }
 }
 
-export async function fetchDashboardByUserId(userId) {
+export async function repoFetchDashboardByUserId(userId) {
     return await apiGetStats(`/stats/dashboard?user_id=${userId}`)
 }
 
-export async function fetchTopChartPieStatsIdByUserId(userId, context) {
+export async function repoFetchTopChartPieStatsIdByUserId(userId, context) {
     return await apiGetStats(`/stats/inventory/total_by_${context}/price?user_id=${userId}`)
 }
 
-export async function fetchMonthlyInventoryBarStatsByUserId(userId, year) {
+export async function repoFetchMonthlyInventoryBarStatsByUserId(userId, year) {
     return await apiGetStats(`/stats/inventory/total_created_per_month/${year}?user_id=${userId}`)
 }
 
-export async function fetchMonthlyReportCreatedBarStatsByUserId(userId, year) {
+export async function repoFetchMonthlyReportCreatedBarStatsByUserId(userId, year) {
     return await apiGetStats(`/stats/report/total_created_per_month/${year}?user_id=${userId}`)
 }

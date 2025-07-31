@@ -1,14 +1,14 @@
 import * as api from '../repositories/history_repository.js'
-import { getHistory, getHistoryByUserId, deleteHistoryById } from '../usecases/history_usecase.js'
+import { usecaseGetHistory, usecaseGetHistoryByUserId, usecaseDeleteHistoryById } from '../usecases/history_usecase.js'
 
-export async function loadHistory(page = 1) {
-  return await getHistory(api, page)
+export async function serviceLoadHistory(page = 1) {
+  return await usecaseGetHistory(api, page)
 }
 
-export async function loadHistoryByUserId(userId, page = 1) {
-  return await getHistoryByUserId(api, userId, page)
+export async function serviceLoadHistoryByUserId(userId, page = 1) {
+  return await usecaseGetHistoryByUserId(api, userId, page)
 }
 
-export async function removeHistoryById(id){
-  return await deleteHistoryById(api, id)
+export async function serviceRemoveHistoryById(id){
+  return await usecaseDeleteHistoryById(api, id)
 }
