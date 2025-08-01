@@ -2,6 +2,10 @@ export async function usecaseGetDashboardByUserId(api, userId) {
     return await api.repoFetchDashboardByUserId(userId)
 }
 
+export async function usecaseGetDashboard(api) {
+    return await api.repoFetchDashboard()
+}
+
 export async function usecaseGetTopChartPieStatsIdByUserId(api, userId, context) {
     return await api.repoFetchTopChartPieStatsIdByUserId(userId, context)
 }

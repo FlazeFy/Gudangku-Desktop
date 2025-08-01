@@ -16,8 +16,12 @@ export async function apiGetStats(path) {
     const data = await res.json()
     return {
         status: res.status,
-        data
+        body: data
     }
+}
+
+export async function repoFetchDashboard() {
+    return await apiGetStats(`/stats/dashboard`)
 }
 
 export async function repoFetchDashboardByUserId(userId) {

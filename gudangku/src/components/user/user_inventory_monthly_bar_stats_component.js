@@ -8,7 +8,7 @@ export async function renderMonthlyInventoryBarStats(userId) {
         const res = await serviceLoadMonthlyInventoryBarStatsByUserId(userId, 2025)
 
         if(res.status == 200){
-            const data = res.data.data
+            const data = res.body.data
 
             const labels = data.map(item => item.context)
             const series = data.map(item => item.total)

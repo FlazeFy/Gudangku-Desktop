@@ -9,7 +9,7 @@ export async function renderDashboardByUser(userId) {
 
     try {
         const res = await serviceLoadDashboardByUserId(userId)
-        const data = res.data.data
+        const data = res.body.data
 
         if(data.total_item > 0) {
             holder.innerHTML = `

@@ -1,8 +1,12 @@
 import * as api from '../repositories/stats_repository.js'
-import { usecaseGetDashboardByUserId, usecaseGetTopChartPieStatsIdByUserId, usecaseGetMonthlyInventoryBarStatsByUserId, usecaseGetMonthlyReportCreatedBarStatsByUserId } from '../usecases/stats_usecase.js'
+import { usecaseGetDashboardByUserId, usecaseGetTopChartPieStatsIdByUserId, usecaseGetMonthlyInventoryBarStatsByUserId, usecaseGetMonthlyReportCreatedBarStatsByUserId, usecaseGetDashboard } from '../usecases/stats_usecase.js'
 
 export async function serviceLoadDashboardByUserId(userId) {
   return await usecaseGetDashboardByUserId(api, userId)
+}
+
+export async function serviceLoadDashboard() {
+  return await usecaseGetDashboard(api)
 }
 
 export async function serviceLoadTopChartPieStatsIdByUserId(userId, context) {
