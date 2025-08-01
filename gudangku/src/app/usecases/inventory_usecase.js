@@ -10,6 +10,10 @@ export async function usecaseSoftDeleteInventoryById(api, inventoryId) {
     return await api.repoSoftDeleteInventoryById(inventoryId)
 }
 
+export async function usecaseHardDeleteInventoryById(api, inventoryId) {
+    return await api.repoHardDeleteInventoryById(inventoryId)
+}
+
 export async function usecaseRecoverInventoryById(api, inventoryId) {
     return await api.repoRecoverInventoryById(inventoryId)
 }
